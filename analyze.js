@@ -107,13 +107,25 @@ Use exactly this structure:
             });
         }
 
-        const aiText =
-            data.output_text ||
-            data.steps
-                ?.find(step => step.type === "model_output")
-                ?.content
-                ?.find(item => item.type === "text")
-                ?.text;
+        let aiText = data.output_text;
+
+        if (!aiText && data.steps) {
+
+            const modelOutput = data.steps.find(
+                step => step.type === "model_output"
+            );
+
+            if (modelOutput?.content) {
+
+                const textPart = modelOutput.content.find(
+                    item => item.type === "text"
+                );
+
+                if (textPart) {
+                    aiText = textPart.text;
+                }
+            }
+        }
 
         if (!aiText) {
             return res.status(500).json({
@@ -122,7 +134,17 @@ Use exactly this structure:
         }
 
         return res.status(200).json({
-            analysis: aiText
+            candidates: [
+                {
+                    content: {
+                        parts: [
+                            {
+                                text: aiText
+                            }
+                        ]
+                    }
+                }
+            ]
         });
 
     } catch (error) {
