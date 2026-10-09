@@ -1,14 +1,11 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Clean India AI</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,28 +13,19 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-
-        <div class="logo">
-            🗑️ Clean India AI
-        </div>
+        <div class="logo">🗑️ Clean India AI</div>
 
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#report">Report Issue</a>
             <a href="#how-it-works">How It Works</a>
         </div>
-
     </nav>
-
 
     <!-- Hero -->
     <section class="hero" id="home">
-
         <div class="hero-content">
-
-            <p class="tagline">
-                AI FOR A CLEANER INDIA
-            </p>
+            <p class="tagline">AI FOR A CLEANER INDIA</p>
 
             <h1>
                 See it.
@@ -54,57 +42,38 @@
             <a href="#report" class="primary-button">
                 Report Garbage →
             </a>
-
         </div>
 
-
         <div class="hero-card">
+            <div class="hero-icon">♻️</div>
 
-            <div class="hero-icon">
-                ♻️
-            </div>
-
-            <h2>
-                Smart Garbage Reporting
-            </h2>
+            <h2>Smart Garbage Reporting</h2>
 
             <p>
                 Upload a photo and let AI identify
                 the waste problem and suggest the
                 right action.
             </p>
-
         </div>
-
     </section>
-
 
     <!-- Report Section -->
     <section class="report-section" id="report">
 
         <div class="section-heading">
-
-            <p class="tagline">
-                REPORT AN ISSUE
-            </p>
-
-            <h2>
-                Found a garbage problem?
-            </h2>
+            <p class="tagline">REPORT AN ISSUE</p>
+            <h2>Found a garbage problem?</h2>
 
             <p>
                 Upload a photo of the problem and
                 our AI will analyze it.
             </p>
-
         </div>
-
 
         <div class="upload-container">
 
             <!-- Location -->
             <div class="location-box">
-
                 <label for="locationInput">
                     📍 Where did you find this problem?
                 </label>
@@ -114,20 +83,13 @@
                     id="locationInput"
                     placeholder="Enter area, city or landmark"
                 >
-
             </div>
-
 
             <!-- Upload Box -->
             <div class="upload-box">
+                <div class="upload-icon">📷</div>
 
-                <div class="upload-icon">
-                    📷
-                </div>
-
-                <h3>
-                    Upload a garbage image
-                </h3>
+                <h3>Upload a garbage image</h3>
 
                 <p>
                     Show us an overflowing bin,
@@ -145,11 +107,9 @@
                     accept="image/*"
                     hidden
                 >
-
             </div>
 
         </div>
-
 
         <!-- AI Report -->
         <div
@@ -159,184 +119,123 @@
         >
 
             <div class="result-header">
-
-                <p class="tagline">
-                    AI ANALYSIS COMPLETE
-                </p>
-
-                <h2>
-                    Garbage Problem Detected
-                </h2>
-
+                <p class="tagline">AI ANALYSIS COMPLETE</p>
+                <h2>Garbage Problem Detected</h2>
             </div>
-
 
             <div class="result-grid">
 
                 <div class="result-card">
-
-                    <span class="result-label">
-                        Category
-                    </span>
-
-                    <h3 id="resultCategory">
-                        —
-                    </h3>
-
+                    <span class="result-label">Category</span>
+                    <h3 id="resultCategory">—</h3>
                 </div>
-
 
                 <div class="result-card">
-
-                    <span class="result-label">
-                        Severity
-                    </span>
-
-                    <h3 id="resultSeverity">
-                        —
-                    </h3>
-
+                    <span class="result-label">Severity</span>
+                    <h3 id="resultSeverity">—</h3>
                 </div>
-
 
                 <div class="result-card">
-
-                    <span class="result-label">
-                        Priority
-                    </span>
-
-                    <h3 id="resultPriority">
-                        —
-                    </h3>
-
+                    <span class="result-label">Priority</span>
+                    <h3 id="resultPriority">—</h3>
                 </div>
 
-
                 <div class="result-card result-wide">
-
-                    <span class="result-label">
-                        What AI Found
-                    </span>
-
-                    <p id="resultObservation">
-                        —
-                    </p>
-
+                    <span class="result-label">What AI Found</span>
+                    <p id="resultObservation">—</p>
                 </div>
 
-
                 <div class="result-card result-wide">
-
-                    <span class="result-label">
-                        Recommended Action
-                    </span>
-
-                    <p id="resultAction">
-                        —
-                    </p>
-
+                    <span class="result-label">Recommended Action</span>
+                    <p id="resultAction">—</p>
                 </div>
 
             </div>
 
+            <!-- Report Actions -->
+            <div class="report-actions">
+                <button
+                    id="saveReportButton"
+                    class="primary-button"
+                    type="button"
+                >
+                    Save Report
+                </button>
+
+                <button
+                    id="viewReportsButton"
+                    class="upload-button"
+                    type="button"
+                >
+                    View Saved Reports
+                </button>
+            </div>
+
+            <!-- Saved Reports -->
+            <div
+                id="savedReportsContainer"
+                class="saved-reports"
+                style="display: none;"
+            >
+                <h3>Saved Reports</h3>
+                <div id="savedReportsList"></div>
+            </div>
+
         </div>
-
     </section>
-
 
     <!-- How It Works -->
     <section class="how-section" id="how-it-works">
 
         <div class="section-heading">
-
-            <p class="tagline">
-                HOW IT WORKS
-            </p>
-
-            <h2>
-                From garbage to action.
-            </h2>
-
+            <p class="tagline">HOW IT WORKS</p>
+            <h2>From garbage to action.</h2>
         </div>
-
 
         <div class="steps">
 
             <div class="step-card">
-
-                <div class="step-number">
-                    01
-                </div>
-
-                <h3>
-                    Upload
-                </h3>
+                <div class="step-number">01</div>
+                <h3>Upload</h3>
 
                 <p>
                     Take a photo of the garbage
                     problem and upload it.
                 </p>
-
             </div>
 
-
             <div class="step-card">
-
-                <div class="step-number">
-                    02
-                </div>
-
-                <h3>
-                    AI Analysis
-                </h3>
+                <div class="step-number">02</div>
+                <h3>AI Analysis</h3>
 
                 <p>
                     AI identifies the type of
                     waste and the severity of
                     the problem.
                 </p>
-
             </div>
 
-
             <div class="step-card">
-
-                <div class="step-number">
-                    03
-                </div>
-
-                <h3>
-                    Generate Report
-                </h3>
+                <div class="step-number">03</div>
+                <h3>Generate Report</h3>
 
                 <p>
                     Get a structured report with
                     a recommended action.
                 </p>
-
             </div>
 
         </div>
-
     </section>
-
 
     <!-- Footer -->
     <footer>
-
-        <p>
-            Clean India AI © 2026
-        </p>
-
-        <p>
-            AI for a cleaner Bharat 🇮🇳
-        </p>
-
+        <p>Clean India AI © 2026</p>
+        <p>AI for a cleaner Bharat 🇮🇳</p>
     </footer>
-
 
     <script src="script.js"></script>
 
 </body>
-
 </html>
+```
