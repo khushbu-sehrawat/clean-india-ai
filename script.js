@@ -1,4 +1,4 @@
-````javascript
+
 const imageInput = document.getElementById("imageInput");
 const uploadBox = document.querySelector(".upload-box");
 const locationInput = document.getElementById("locationInput");
